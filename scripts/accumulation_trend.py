@@ -2,7 +2,7 @@ import pandas as pd
 import plotly.graph_objects as go
 from datetime import datetime, timedelta
 from plotly.subplots import make_subplots
-from get_close_price import get_close_prices
+from scripts.get_close_price import get_close_prices
 import os
 import plotly.express as px
 

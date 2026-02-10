@@ -2,7 +2,7 @@ import pandas as pd
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 import numpy as np
-from convert_sector_to_index_viceversa import convert_sector_or_index
+from scripts.convert_sector_to_index_viceversa import convert_sector_or_index
 
 def sector_wise_accumulation(all_indices_data, trading_days=5, top_n=20):
     """
