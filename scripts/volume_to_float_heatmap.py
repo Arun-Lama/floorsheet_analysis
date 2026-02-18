@@ -46,7 +46,7 @@ def plot_relative_turnover_heatmap(adjusted_price, float_data, top_n=20, timefra
 
     # Step 5: Sort by longest timeframe for top_n
     last_period = list(timeframes.keys())[-1]
-    turnover_df_sorted = turnover_df.sort_values(by=last_period, ascending=False).head(top_n)
+    turnover_df_sorted = turnover_df.sort_values(by=last_period, ascending=False).head(top_n).dropna()
 
     # Step 6: Plot heatmap
     fig = px.imshow(

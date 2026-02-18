@@ -3,7 +3,7 @@ import plotly.express as px
 
 def top_NetBuyVsFloat(combined_floorsheet, float_data, active_comps, n_day, top_n):
     floor_sheet_reduced = combined_floorsheet[['Stock Symbol', 'Buyer', 'Seller', 'Quantity', 'Date']]
-    filtered_df = floor_sheet_reduced[floor_sheet_reduced['Stock Symbol'].isin(active_comps['Symbol'])]
+    filtered_df = floor_sheet_reduced[floor_sheet_reduced['Stock Symbol'].isin(active_comps['Ticker'])]
     nth_date = filtered_df['Date'].drop_duplicates().sort_values().iloc[-(n_day + 1)]
     n_day_floorsheet = filtered_df[filtered_df['Date'] >= nth_date]
     pivot_df_buy = n_day_floorsheet.pivot_table(

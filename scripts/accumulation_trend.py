@@ -146,7 +146,7 @@ def calculate_cornering_strength(
 
     # Only non-index stocks
     tickers = active_comps.loc[
-        active_comps["Sector"] != "Index", "Symbol"
+        active_comps["Sector"] != "Index", "Ticker"
     ]
 
     all_stock = []
@@ -303,9 +303,9 @@ def calculate_cornering_strength(
         marker_color="darkcyan"
     )
 
-    fig.show()
+    
 
-    return df
+    return fig.show()
 
 
 

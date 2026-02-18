@@ -32,7 +32,8 @@ def sector_specific_accumulation(sector_name, sector_specific_data, trading_days
 
     # Calculate cumulative volume
     cumulative_volume = pivot_table_vol.cumsum()
-
+    if cumulative_volume.empty:
+        return None
     # Get top tickers by latest cumulative volume
     latest_volumes = cumulative_volume.iloc[-1]
     top_tickers = latest_volumes.sort_values(ascending=False).head(top_n)

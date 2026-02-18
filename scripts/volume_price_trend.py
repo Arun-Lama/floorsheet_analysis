@@ -47,6 +47,7 @@ def calculate_and_plot_vpt(data: pd.DataFrame, data_type: str = "indices", tradi
     vpt_change = pivot_volume * daily_return
     vpt = vpt_change.cumsum().fillna(0)
 
+
     # Plot
     fig = make_subplots(specs=[[{"secondary_y": False}]])
     for ticker in vpt.columns:
@@ -123,6 +124,8 @@ def stock_wise_VPT(data: pd.DataFrame, data_type: str = "indices", trading_days:
     # VPT: Volume × Daily Return
     vpt_change = pivot_volume * daily_return
     vpt = vpt_change.cumsum().fillna(0)
+    vpt = vpt[vpt.iloc[-1].sort_values(ascending=False).head(10).index]
+
 
     # Plot
     fig = make_subplots(specs=[[{"secondary_y": False}]])

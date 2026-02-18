@@ -63,6 +63,7 @@ def free_float_market_cap():
         # Convert 'Floated Market Cap' to float
         df['Floated Market Cap'] = df['Floated Market Cap'].astype(float)
         df['Floated Shares'] = df['Floated Shares'].astype(float) 
+        df = df[df["Floated Shares"].notna() & (df["Floated Shares"] != 0)]
         return df
 
     finally:
